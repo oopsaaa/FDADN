@@ -1,0 +1,23 @@
+MANUAL_SEED: 0
+MODEL:
+  PY_FILE: networks/FDADN.py
+  SCALE: 4
+TRAIN_BATCH_SIZE: 32
+VALID_BATCH_SIZE: 8
+PY_FILE: dataset/HDRTV_set/HDRTV_set.py
+NUM_WORKERS: 2
+SRITM:
+  DIVIDE_VALID: False
+  TRAIN_DATAROOT_GT: '/home/songyongbao/syb/HDRTVset/downsampleFactor_04_512/hr/10bit'
+  TRAIN_DATAROOT_LQ: '/home/songyongbao/syb/HDRTVset/downsampleFactor_04_512/lr/08bit'
+  VALID_DATAROOT_GT: '/home/songyongbao/syb/HDRTV_test/test_hdr'
+  VALID_DATAROOT_LQ: '/home/songyongbao/syb/HDRTV_test/test_lrsdr'
+
+MAX_EPOCH: 80
+OPTIMIZER:
+  LEARNING_RATE: !!float 5e-4
+INITIALIZER:
+  NAME: Xavier Normal
+SCHEDULER:
+  GAMMA: 0.5
+  STEP_SIZE: 200
